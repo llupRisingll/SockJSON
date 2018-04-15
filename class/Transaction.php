@@ -6,8 +6,12 @@ use Ratchet\ConnectionInterface;
 class Transaction implements MessageComponentInterface {
     protected $clients;
 
-    public function onOpen(ConnectionInterface $conn) {
+    public function __construct() {
         $this->clients = new \SplObjectStorage;
+    }
+
+    public function onOpen(ConnectionInterface $conn) {
+        
     }
 
     public function onMessage(ConnectionInterface $from, $msg) {
