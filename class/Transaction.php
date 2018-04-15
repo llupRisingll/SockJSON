@@ -4,6 +4,8 @@ use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 
 class Transaction implements MessageComponentInterface {
+    protected $clients;
+
     public function onOpen(ConnectionInterface $conn) {
 
     }
