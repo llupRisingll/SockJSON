@@ -13,7 +13,13 @@ if (count($argv) > 0){
         require 'vendor/autoload.php';
         require 'class/Transaction.php';
 
-        $server = IoServer::factory( new Transaction(), 8080 );
+        $server = IoServer::factory( 
+            new HttpServer(
+                new WsServer(
+                    new Transaction()
+                )
+            ), 8080 
+        );
 
         try{
             echo "Starting the application...\n";
