@@ -10,8 +10,8 @@ if (count($argv) > 0){
 
     if ($str1 == "start"){
         
-        require dirname(__DIR__) . '/vendor/autoload.php';
-        require dirname(__DIR__) . '/class/Transaction.php';
+        require 'vendor/autoload.php';
+        require 'class/Transaction.php';
 
         $server = IoServer::factory(
             new Chat(),
