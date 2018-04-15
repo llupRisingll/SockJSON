@@ -1,11 +1,11 @@
 <?php
 
+require 'vendor/autoload.php';
+require 'class/Transaction.php';
+
 use Ratchet\Server\IoServer;
 use Ratchet\Http\HttpServer;
 use Ratchet\WebSocket\WsServer;
-
-require 'vendor/autoload.php';
-require 'class/Transaction.php';
 
 $server = IoServer::factory( 
     new HttpServer(
