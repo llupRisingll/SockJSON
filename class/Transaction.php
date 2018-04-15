@@ -7,7 +7,7 @@ class Transaction implements MessageComponentInterface {
     protected $clients;
 
     public function onOpen(ConnectionInterface $conn) {
-
+        $this->clients = new \SplObjectStorage;
     }
 
     public function onMessage(ConnectionInterface $from, $msg) {
