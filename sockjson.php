@@ -14,6 +14,12 @@ if (count($argv) > 0){
         require 'class/Transaction.php';
 
         $server = IoServer::factory( new Transaction(), 8080 );
-        $server->run();
+        try{
+            $server->run();
+        }catch(\RuntimeException $e){
+            echo "Failed to initialize in port for real-time Transaction. A React Loop was not provided during instantiation";
+            exit;
+        }
+        echo "Socket is successfully started";
     }
 }
