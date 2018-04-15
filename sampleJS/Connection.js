@@ -7,3 +7,11 @@ conn.onopen = function(e) {
 conn.onmessage = function(e) {
     console.log(e.data);
 };
+
+conn.onerror = function(e){
+    console.log("Fatal Error: "+ e)
+};
+
+conn.onclose = function(e){
+    console.log("Disconnected "+ e);
+}
